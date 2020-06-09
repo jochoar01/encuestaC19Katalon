@@ -47,10 +47,10 @@ import org.openqa.selenium.Keys as Keys
 class stepLoginAlternativo {
 	String ruta;
 	@Given("Que puedo acceder a la pagina encuesta C19 EPM como miembro del Contratista Alternativo (.*)")
-	def Que_puedo_acceder_a_la_pagina_encuesta_C19_EPM_como_miembro_del_Contratista(String idPrueba) {	
+	def Que_puedo_acceder_a_la_pagina_encuesta_C19_EPM_como_miembro_del_Contratista(String idPrueba) {
 		this.ruta ="Evidencias/"+idPrueba
-		 File carpeta = new File(".",ruta );		  
-		 carpeta.mkdir();
+		File carpeta = new File(".",ruta );
+		carpeta.mkdir();
 		WebUI.openBrowser("https://oidcb2c.b2clogin.com/oidcb2c.onmicrosoft.com/b2c_1_basesigninup/oauth2/v2.0/authorize?response_type=id_token&scope=openid%20profile&client_id=de254408-006f-4331-87fc-cf8d4283bfd2&redirect_uri=https%3A%2F%2Fapp-inf6004.azurewebsites.net%2Fapp-covid19%2Fencuesta%2Fauth&state=eyJpZCI6ImM2NDQ0NTkwLWIyM2UtNGUzMS05YjYzLTVkMDkwNTQ1OGRhNiIsInRzIjoxNTkxNjMwNjUwLCJtZXRob2QiOiJyZWRpcmVjdEludGVyYWN0aW9uIn0%3D&nonce=6f6158e1-54a1-40d1-8b1d-524cef817417&client_info=1&x-client-SKU=MSAL.JS&x-client-Ver=1.3.1&client-request-id=d62fef6e-a731-4a44-b21c-61d2c9bc10f9&response_mode=fragment")
 		WebUI.maximizeWindow()
 		WebUI.takeScreenshot(ruta+"/pantallaLogin.png")
@@ -92,7 +92,7 @@ class stepLoginAlternativo {
 			WebUI.sendKeys(findTestObject('Object Repository/primerFlujoUsuarioPrimeraVez/5input__identificacion'), numero_cedula)
 		}
 
-	
+
 
 		if(celular!=""){
 			WebUI.clearText(findTestObject('Object Repository/primerFlujoUsuarioPrimeraVez/8input_Celular7'))
@@ -266,7 +266,7 @@ class stepLoginAlternativo {
 
 			if(ningunaAnterioreEstadoSalud=="s"){
 				WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Ninguna de las anteriores (Estado de Salud)(Familiar)"))
-				WebUI.takeScreenshot("Evidencias/IngresoAplicacionPrimeraVez/SeleccionaNinguna de las anteriores(Familia).png")
+				WebUI.takeScreenshot(ruta+"/SeleccionaNinguna de las anteriores(Familia).png")
 			}
 		}else{
 
@@ -289,7 +289,7 @@ class stepLoginAlternativo {
 
 
 			WebUI.click(findTestObject("Object Repository/sedes/sede"))
-            
+
 
 			if (cantidadTurnos=="2") {
 				WebUI.selectOptionByValue(findTestObject("Object Repository/sedes/SeleccionarNumeroDeTurnos"), cantidadTurnos, false)
@@ -301,14 +301,12 @@ class stepLoginAlternativo {
 				WebUI.sendKeys(findTestObject("Object Repository/sedes/inputSedes2"), Keys.chord(Keys.ENTER))
 				WebUI.takeScreenshot(ruta+"/Horario Mixto.png")
 				WebUI.click(findTestObject("Object Repository/nueva/button_SiguienteSede"))
-				
 			}else{
 				WebUI.selectOptionByValue(findTestObject("Object Repository/sedes/seleccionarTurno"), turnoA, false)
 				WebUI.sendKeys(findTestObject("Object Repository/sedes/inputSedes"), sedeA)
 				WebUI.sendKeys(findTestObject("Object Repository/sedes/inputSedes"), Keys.chord(Keys.ENTER))
 				WebUI.takeScreenshot(ruta+"/Un solo horario.png")
 				WebUI.click(findTestObject("Object Repository/nueva/button_SiguienteSede"))
-				
 			}
 		}
 	}
@@ -346,7 +344,7 @@ class stepLoginAlternativo {
 		if(  dificultadesRespiratorias=="s"){
 			WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Dificultades respiratorias"))
 		}
-		
+
 		WebUI.takeScreenshot(ruta+"/Sintomas 1.png")
 		if(  dificultadOler=="s"){
 			WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Dificultad para oler o degustar los alimentos"))
@@ -367,7 +365,7 @@ class stepLoginAlternativo {
 		if(  ningunaviaje=="s"){
 			WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Ninguna de las anteriores(En los ltimos das)"))
 		}
-		
+
 		WebUI.takeScreenshot(ruta+"/Sintomas 2.png")
 
 		WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/sintomasSiguiente"))
@@ -388,12 +386,11 @@ class stepLoginAlternativo {
 
 
 		if(tieneEstres=="n"){
-			
+
 			WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/siguiente Estres"))
-			
 		}else{
 
-			WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Ha presentado algn nivel de estrsSi"))		
+			WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Ha presentado algn nivel de estrsSi"))
 
 			if(  dolorEspalda=="s"){
 				WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Dolores en el cuello espalda o tensin muscular"))
@@ -423,17 +420,16 @@ class stepLoginAlternativo {
 				WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Ninguna de las anteriores(Estres)"))
 			}
 			WebUI.takeScreenshot(ruta+"/Sintomas estres 1.png")
-			
+
 			WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/siguiente Estres"))
-
-
 		}
 
 		WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Doy consentimiento informado"))
-		
-		WebUI.takeScreenshot(ruta+"/Consentimiento informado.png")
-		//WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Enviar todo"))
 
+		WebUI.takeScreenshot(ruta+"/Consentimiento informado.png")
+		WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Enviar todo"))
+
+		WebUI.takeScreenshot(ruta+"/Encuesta Exitosa.png")
 	}
 }
 

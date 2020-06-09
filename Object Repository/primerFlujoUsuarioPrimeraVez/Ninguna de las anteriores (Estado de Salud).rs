@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>/html/body/app-root/app-encuesta/div/div/div[1]/div[1]/app-grupo-pregunta/div/div[2]/app-pregunta/div/div/app-respuesta/div/div/epm-checkbox-list/div/div[8]/epm-checkbox/div/label/span[1]</value>
+         <value>/html/body/app-root/app-encuesta-unica/div/div/div[1]/app-grupo-pregunta/div/div[3]/app-pregunta/div/div/app-respuesta/div/div/epm-radio-button-multiple/div[1]/epm-radio-button/div/label/span[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
