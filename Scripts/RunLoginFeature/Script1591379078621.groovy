@@ -1,5 +1,5 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
-import java.io.File;
+import java.io.File as File
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -16,10 +16,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+CucumberKW.runFeatureFile('Include/features/flujo1UsuarioPrimeraVez.feature')
+CucumberKW.runFeatureFile('Include/features/flujo2UsuarioYaDiligencioEncuestaInicial.feature')
+CucumberKW.runFeatureFile('Include/features/flujo3UsuarioYaDiligencioEncuestaDelDia.feature')
 
-
-
-CucumberKW.runFeatureFile('Include/features/loginContratista.feature')
-
-CucumberKW.runFeatureFile('Include/features/loginGrupoEPM.feature')
-
+S

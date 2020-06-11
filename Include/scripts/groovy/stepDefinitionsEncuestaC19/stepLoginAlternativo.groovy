@@ -69,6 +69,12 @@ class stepLoginAlternativo {
 		WebUI.takeScreenshot(ruta+"/Iniciasesion.png")
 	}
 
+	@Then("Presiono Boton de diligenciar cuestionario")
+	def clickBotonEncuesta() {
+		WebUI.takeScreenshot(ruta+"/ClickDiligenciarEncuesta.png")
+		WebUI.click(findTestObject('Object Repository/primerFlujoUsuarioPrimeraVez/DiligenciarEncuesta'))
+	}
+
 	@And("Selecciono checkbox tratamiento de datos (.*) y doy click en siguiente")
 	def tratamientoDatos(String s_n) {
 		if(s_n=="s"){
@@ -431,7 +437,30 @@ class stepLoginAlternativo {
 
 		WebUI.takeScreenshot(ruta+"/Encuesta Exitosa.png")
 	}
+
+	@Then("Click en consentimiento informado")
+	def clickConsentimientoInformado() {
+
+		WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Doy consentimiento informado"))
+
+		WebUI.takeScreenshot(ruta+"/Consentimiento informado.png")
+		WebUI.click(findTestObject("Object Repository/primerFlujoUsuarioPrimeraVez/Enviar todo"))
+
+		WebUI.takeScreenshot(ruta+"/Encuesta Exitosa.png")
+	}
+	
+	
+	
+	
+	@Then("click en el boton editar (.*)")
+	public void click_en_el_boton_editar_pantallaAeditar() {
+		// Write code here that turns the phrase above into concrete actions
+	
+	}
+	
 }
+
+
 
 
 
